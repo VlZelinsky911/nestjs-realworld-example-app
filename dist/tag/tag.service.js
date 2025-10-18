@@ -21,6 +21,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TagService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
@@ -36,8 +37,8 @@ let TagService = class TagService {
     }
 };
 TagService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(tag_entity_1.TagEntity)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(tag_entity_1.TagEntity)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], TagService);
 exports.TagService = TagService;

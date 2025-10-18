@@ -15,6 +15,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ValidationPipe = void 0;
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
@@ -29,8 +30,8 @@ let ValidationPipe = class ValidationPipe {
             if (!metatype || !this.toValidate(metatype)) {
                 return value;
             }
-            const object = class_transformer_1.plainToClass(metatype, value);
-            const errors = yield class_validator_1.validate(object);
+            const object = (0, class_transformer_1.plainToClass)(metatype, value);
+            const errors = yield (0, class_validator_1.validate)(object);
             if (errors.length > 0) {
                 throw new http_exception_1.HttpException({ message: 'Input data validation failed', errors: this.buildError(errors) }, common_1.HttpStatus.BAD_REQUEST);
             }
@@ -53,7 +54,7 @@ let ValidationPipe = class ValidationPipe {
     }
 };
 ValidationPipe = __decorate([
-    common_1.Injectable()
+    (0, common_1.Injectable)()
 ], ValidationPipe);
 exports.ValidationPipe = ValidationPipe;
 //# sourceMappingURL=validation.pipe.js.map

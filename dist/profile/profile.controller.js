@@ -21,6 +21,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProfileController = void 0;
 const common_1 = require("@nestjs/common");
 const profile_service_1 = require("./profile.service");
 const user_decorator_1 = require("../user/user.decorator");
@@ -46,30 +47,33 @@ let ProfileController = class ProfileController {
     }
 };
 __decorate([
-    common_1.Get(':username'),
-    __param(0, user_decorator_1.User('id')), __param(1, common_1.Param('username')),
+    (0, common_1.Get)(":username"),
+    __param(0, (0, user_decorator_1.User)("id")),
+    __param(1, (0, common_1.Param)("username")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String]),
     __metadata("design:returntype", Promise)
 ], ProfileController.prototype, "getProfile", null);
 __decorate([
-    common_1.Post(':username/follow'),
-    __param(0, user_decorator_1.User('email')), __param(1, common_1.Param('username')),
+    (0, common_1.Post)(":username/follow"),
+    __param(0, (0, user_decorator_1.User)("email")),
+    __param(1, (0, common_1.Param)("username")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ProfileController.prototype, "follow", null);
 __decorate([
-    common_1.Delete(':username/follow'),
-    __param(0, user_decorator_1.User('id')), __param(1, common_1.Param('username')),
+    (0, common_1.Delete)(":username/follow"),
+    __param(0, (0, user_decorator_1.User)("id")),
+    __param(1, (0, common_1.Param)("username")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String]),
     __metadata("design:returntype", Promise)
 ], ProfileController.prototype, "unFollow", null);
 ProfileController = __decorate([
-    swagger_1.ApiBearerAuth(),
-    swagger_1.ApiTags('profiles'),
-    common_1.Controller('profiles'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, swagger_1.ApiTags)("profiles"),
+    (0, common_1.Controller)("profiles"),
     __metadata("design:paramtypes", [profile_service_1.ProfileService])
 ], ProfileController);
 exports.ProfileController = ProfileController;

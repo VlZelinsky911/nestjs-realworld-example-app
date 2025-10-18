@@ -21,6 +21,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
@@ -55,7 +56,7 @@ let UserService = class UserService {
     create(dto) {
         return __awaiter(this, void 0, void 0, function* () {
             const { username, email, password } = dto;
-            const qb = yield typeorm_2.getRepository(user_entity_1.UserEntity)
+            const qb = yield (0, typeorm_2.getRepository)(user_entity_1.UserEntity)
                 .createQueryBuilder('user')
                 .where('user.username = :username', { username })
                 .orWhere('user.email = :email', { email });
@@ -69,7 +70,7 @@ let UserService = class UserService {
             newUser.email = email;
             newUser.password = password;
             newUser.articles = [];
-            const errors = yield class_validator_1.validate(newUser);
+            const errors = yield (0, class_validator_1.validate)(newUser);
             if (errors.length > 0) {
                 const _errors = { username: 'Userinput is not valid.' };
                 throw new http_exception_1.HttpException({ message: 'Input data validation failed', _errors }, common_2.HttpStatus.BAD_REQUEST);
@@ -135,8 +136,8 @@ let UserService = class UserService {
     }
 };
 UserService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(user_entity_1.UserEntity)),
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.UserEntity)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], UserService);
 exports.UserService = UserService;

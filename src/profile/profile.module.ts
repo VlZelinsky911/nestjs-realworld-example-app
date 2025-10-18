@@ -21,7 +21,7 @@ import { BlockController } from "./block.controller";
     UserModule,
   ],
   providers: [ProfileService, BlockService],
-  controllers: [ProfileController, BlockController],
+  controllers: [BlockController, ProfileController],
   exports: [],
 })
 export class ProfileModule implements NestModule {

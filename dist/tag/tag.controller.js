@@ -18,6 +18,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TagController = void 0;
 const common_1 = require("@nestjs/common");
 const tag_service_1 = require("./tag.service");
 const swagger_1 = require("@nestjs/swagger");
@@ -32,15 +33,15 @@ let TagController = class TagController {
     }
 };
 __decorate([
-    common_1.Get(),
+    (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], TagController.prototype, "findAll", null);
 TagController = __decorate([
-    swagger_1.ApiBearerAuth(),
-    swagger_1.ApiTags('tags'),
-    common_1.Controller('tags'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, swagger_1.ApiTags)('tags'),
+    (0, common_1.Controller)('tags'),
     __metadata("design:paramtypes", [tag_service_1.TagService])
 ], TagController);
 exports.TagController = TagController;

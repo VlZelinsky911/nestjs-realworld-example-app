@@ -18,6 +18,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthMiddleware = void 0;
 const http_exception_1 = require("@nestjs/common/exceptions/http.exception");
 const common_1 = require("@nestjs/common");
 const jwt = require("jsonwebtoken");
@@ -47,7 +48,7 @@ let AuthMiddleware = class AuthMiddleware {
     }
 };
 AuthMiddleware = __decorate([
-    common_1.Injectable(),
+    (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], AuthMiddleware);
 exports.AuthMiddleware = AuthMiddleware;

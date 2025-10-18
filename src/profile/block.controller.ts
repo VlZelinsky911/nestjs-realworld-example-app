@@ -1,4 +1,4 @@
-import { Delete, Get, Param, Post } from "@nestjs/common";
+import { Controller, Delete, Get, Param, Post } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { User } from "../user/user.decorator";
 import { BlockService } from "./block.service";
@@ -7,6 +7,7 @@ import { BaseController } from "../shared/base.controller";
 
 @ApiBearerAuth()
 @ApiTags("profiles")
+@Controller("profiles")
 export class BlockController extends BaseController {
   constructor(private readonly blockService: BlockService) {
     super();
